@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Заявки (фільтр)</title></head>
+<body style="font-family:sans-serif; text-align:center;">
+    <h2>📅 Заявки з {{ start }} по {{ end }}</h2>
+    <table border="1" cellpadding="8" style="margin:auto;">
+        <tr><th>ПІБ</th><th>Адреса</th><th>Телефон</th><th>WhatsApp</th><th>Час</th></tr>
+        {% for row in rows %}
+        <tr>{% for col in row %}<td>{{ col }}</td>{% endfor %}</tr>
+        {% endfor %}
+    </table><br>
+    <a href="/">⬅️ Назад</a>
+</body>
+</html>

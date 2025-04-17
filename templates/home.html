@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Netmix Заявки</title></head>
+<body style="font-family:sans-serif; text-align:center; margin-top:100px;">
+    <h1>📄 Заявки клієнтів</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div style="margin: 20px auto; padding: 10px; width: 60%; border: 1px solid #4CAF50; background-color: #eafbe7; color: #2e7d32; border-radius: 8px;">
+          {% for category, message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <form method="get" action="/filter">
+        <label>Фільтр з: <input type="date" name="start"></label>
+        <label>по: <input type="date" name="end"></label>
+        <button type="submit">🔍 Показати</button>
+    </form><br>
+    <a href="/export"><button style="font-size:18px; padding:10px 20px;">⬇️ Експортувати в Excel</button></a>
+</body>
+</html>

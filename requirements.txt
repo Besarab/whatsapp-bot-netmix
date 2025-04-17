@@ -1,0 +1,4 @@
+flask
+openpyxl
+twilio
+python-dotenv
